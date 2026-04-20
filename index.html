@@ -1,0 +1,231 @@
+<html>
+<head>
+    <title>Grand Plaza Hotel - Room Booking</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c9c7a3;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    background-color: #0f182e;
+    color: white;
+    padding: 15px;
+    margin: 0;
+}
+
+h2 {
+    color: #0f182e;
+}
+
+h3 {
+    color: #0f182e;
+
+    margin-top: 20px;
+}
+
+
+div {
+    background-color: white;
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+img {
+    margin: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #ecf0f1;
+    margin: 5px auto;
+    padding: 8px;
+    width: 60%;
+    border-radius: 20px;
+}
+
+
+p {
+    font-size: 16px;
+    color: #555;
+}
+
+p:last-of-type {
+    font-weight: bold;
+    color: #27ae60;
+}
+
+input[type="date"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+
+form {
+    background-color: white;
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color:#0f182e;
+
+}
+
+
+p:last-child {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+</style
+
+</head>
+
+
+<body center="align">
+
+    <h1>Grand Plaza Hotel</h1>
+    <h2>Room Selection</h2>
+<hr>
+
+    <h3>ROOM 1</h3>
+    <div>
+        <h3>Deluxe Room</h3>
+
+        <!-- Image section -->
+        <img src="C:\Users\HP\OneDrive\Desktop\opk.jpeg"width="200"height="150">
+        <img src="C:\Users\HP\OneDrive\Desktop\iht.jpeg"width="200"height="150">
+
+        <p>Amenities:</p>
+        <ul>
+            <li>Free WiFi</li>
+            <li>Air Conditioning</li>
+            <li>King Size Bed</li>
+            <li>TV & Mini Fridge</li>
+        </ul>
+
+        <p>Price: ₹3000 per night</p>
+    </div>
+<hr>
+
+    <h3> ROOM 2 </h3>
+    <div>
+        <h3>Executive Suite</h3>
+
+        <img src="C:\Users\HP\OneDrive\Desktop\blue.jpeg"width="200"height="150">
+        <img src="C:\Users\HP\OneDrive\Desktop\gray.jpeg"width="200"height="150">
+
+        <p>Amenities:</p>
+        <ul>
+            <li>Free WiFi</li>
+            <li>Living Area</li>
+            <li>Luxury Bathroom</li>
+            <li>Room Service</li>
+        </ul>
+
+        <p>Price: ₹5000 per night</p>
+    </div>
+<hr>
+
+    <h3>ROOM 3</h3>
+    <div>
+        <h3>Presidential Suite</h3>
+
+        <img src="C:\Users\HP\OneDrive\Desktop\pkio.jpeg"width="200"height="150">
+        <img src="C:\Users\HP\OneDrive\Desktop\juty.jpeg"width="200"height="150">
+
+        <p>Amenities:</p>
+        <ul>
+            <li>Private Pool</li>
+            <li>Butler Service</li>
+            <li>Luxury Interiors</li>
+            <li>Ocean View</li>
+        </ul>
+
+        <p>Price: ₹9000 per night</p>
+    </div>
+<hr>
+
+    <h3> DATE SELECTION</h3>
+    <h3>Select Dates</h3>
+
+    <label>Check-in:</label>
+    <input type="date"><br><br>
+
+    <label>Check-out:</label>
+    <input type="date"><br><br>
+
+    <h3> BOOKING FORM</h3>
+    <h3>Booking Form</h3>
+
+    <form>
+        <label>Name:</label><br>
+        <input type="text" placeholder="Enter your name"><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" placeholder="Enter your email"><br><br>
+
+        <label>Room Type:</label><br>
+        <select>
+            <option>Deluxe Room</option>
+            <option>Executive Suite</option>
+            <option>Presidential Suite</option>
+        </select><br><br>
+
+        <label>Number of Guests:</label><br>
+        <input type="number" min="1" max="5"><br><br>
+
+        <button type="submit">Book Now</button>
+    </form>
+
+    <p>© 2026 Grand Plaza Hotel</p>
+
+</body>
+</html>
