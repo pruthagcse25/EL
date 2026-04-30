@@ -140,8 +140,14 @@ p:last-child {
         <h3>Deluxe Room</h3>
 
         <!-- Image section -->
-        <img src="C:\Users\HP\OneDrive\Desktop\opk.jpeg"width="200"height="150">
-        <img src="C:\Users\HP\OneDrive\Desktop\iht.jpeg"width="200"height="150">
+	<img src="C:\Users\HP\OneDrive\Desktop\king.jpeg"width="300"height="200">
+       <img src="C:\Users\HP\OneDrive\Desktop\tv.jpeg"width="300"height="200">
+        <img src="C:\Users\HP\OneDrive\Desktop\ac.jpeg"width="300"height="200">
+	<img src="C:\Users\HP\OneDrive\Desktop\frige.jpeg"width="300"height="200">
+	
+	
+
+
 
         <p>Amenities:</p>
         <ul>
@@ -159,8 +165,10 @@ p:last-child {
     <div>
         <h3>Executive Suite</h3>
 
-        <img src="C:\Users\HP\OneDrive\Desktop\blue.jpeg"width="200"height="150">
-        <img src="C:\Users\HP\OneDrive\Desktop\gray.jpeg"width="200"height="150">
+        <img src="C:\Users\HP\OneDrive\Desktop\blue.jpeg"width="300"height="200">
+        <img src="C:\Users\HP\OneDrive\Desktop\gray.jpeg"width="300"height="200">
+	<img src="C:\Users\HP\OneDrive\Desktop\bat.jpeg"width="300"height="200">
+	<img src="C:\Users\HP\OneDrive\Desktop\room.jpeg"width="300"height="200">
 
         <p>Amenities:</p>
         <ul>
@@ -178,8 +186,10 @@ p:last-child {
     <div>
         <h3>Presidential Suite</h3>
 
-        <img src="C:\Users\HP\OneDrive\Desktop\pkio.jpeg"width="200"height="150">
-        <img src="C:\Users\HP\OneDrive\Desktop\juty.jpeg"width="200"height="150">
+        <img src="C:\Users\HP\OneDrive\Desktop\luc.jpeg"width="300"height="200">
+	<img src="C:\Users\HP\OneDrive\Desktop\pool.jpeg"width="300"height="200">
+        <img src="C:\Users\HP\OneDrive\Desktop\but.jpeg"width="300"height="200">
+	<img src="C:\Users\HP\OneDrive\Desktop\ocean.jpeg"width="300"height="200">
 
         <p>Amenities:</p>
         <ul>
@@ -226,6 +236,91 @@ p:last-child {
     </form>
 
     <p>© 2026 Grand Plaza Hotel</p>
+<script>
+// -------------------- ROOM PRICES --------------------
+const roomPrices = {
+    "Deluxe Room": 3000,
+    "Executive Suite": 5000,
+    "Presidential Suite": 9000
+};
+
+// -------------------- ELEMENT SELECTORS --------------------
+const dateInputs = document.querySelectorAll('input[type="date"]');
+const checkInInput = dateInputs[0];
+const checkOutInput = dateInputs[1];
+const roomSelect = document.querySelector("select");
+const form = document.querySelector("form");
+
+// -------------------- TOTAL PRICE DISPLAY --------------------
+const totalDisplay = document.createElement("h3");
+totalDisplay.style.color = "#e74c3c";
+totalDisplay.textContent = "";
+form.parentNode.insertBefore(totalDisplay, form);
+
+// -------------------- PRICE CALCULATION --------------------
+function calculateTotal() {
+    const checkIn = new Date(checkInInput.value);
+    const checkOut = new Date(checkOutInput.value);
+    const roomType = roomSelect.value;
+
+    if (checkInInput.value && checkOutInput.value && checkOut > checkIn) {
+        const nights = (checkOut - checkIn) / (1000 * 60 * 60 * 24);
+        const total = nights * roomPrices[roomType];
+
+        totalDisplay.textContent = `Total Price: ₹${total} (${nights} nights)`;
+    } else {
+        totalDisplay.textContent = "";
+    }
+}
+
+// Event listeners
+checkInInput.addEventListener("change", calculateTotal);
+checkOutInput.addEventListener("change", calculateTotal);
+roomSelect.addEventListener("change", calculateTotal);
+
+// -------------------- FORM VALIDATION --------------------
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.querySelector('input[type="text"]').value.trim();
+    const email = document.querySelector('input[type="email"]').value.trim();
+    const guests = document.querySelector('input[type="number"]').value;
+
+    if (!name || !email || !guests || !checkInInput.value || !checkOutInput.value) {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    if (new Date(checkOutInput.value) <= new Date(checkInInput.value)) {
+        alert("Check-out date must be after check-in date.");
+        return;
+    }
+
+    alert("Booking Successful!\n" + totalDisplay.textContent);
+});
+
+// -------------------- IMAGE CAROUSEL --------------------
+const roomSections = document.querySelectorAll("div");
+
+roomSections.forEach(section => {
+    const images = section.querySelectorAll("img");
+
+    if (images.length > 1) {
+        let currentIndex = 0;
+
+        // Hide all except first
+        images.forEach((img, index) => {
+            img.style.display = index === 0 ? "inline-block" : "none";
+        });
+
+        setInterval(() => {
+            images[currentIndex].style.display = "none";
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.display = "inline-block";
+        }, 2000);
+    }
+});
+</script>
 
 </body>
 </html>
