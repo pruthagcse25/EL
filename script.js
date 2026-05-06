@@ -1,81 +1,112 @@
-// ROOM PRICES
-const roomPrices = {
-    "Deluxe Room": 3000,
-    "Executive Suite": 5000,
-    "Presidential Suite": 9000
-};
-
-// ELEMENTS
-const dateInputs = document.querySelectorAll('input[type="date"]');
-const checkInInput = dateInputs[0];
-const checkOutInput = dateInputs[1];
-const roomSelect = document.querySelector("select");
-const form = document.querySelector("form");
-
-// TOTAL DISPLAY
-const totalDisplay = document.createElement("h3");
-totalDisplay.style.color = "#e74c3c";
-form.parentNode.insertBefore(totalDisplay, form);
-
-// CALCULATE PRICE
-function calculateTotal() {
-    const checkIn = new Date(checkInInput.value);
-    const checkOut = new Date(checkOutInput.value);
-    const roomType = roomSelect.value;
-
-    if (checkInInput.value && checkOutInput.value && checkOut > checkIn) {
-        const nights = (checkOut - checkIn) / (1000 * 60 * 60 * 24);
-        const total = nights * roomPrices[roomType];
-
-        totalDisplay.textContent = `Total Price: ₹${total} (${nights} nights)`;
-    } else {
-        totalDisplay.textContent = "";
-    }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c9c7a3;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-// EVENTS
-checkInInput.addEventListener("change", calculateTotal);
-checkOutInput.addEventListener("change", calculateTotal);
-roomSelect.addEventListener("change", calculateTotal);
+h1 {
+    background-color: #0f182e;
+    color: white;
+    padding: 15px;
+    margin: 0;
+}
 
-// FORM VALIDATION
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
+h2 {
+    color: #0f182e;
+}
 
-    const name = document.querySelector('input[type="text"]').value.trim();
-    const email = document.querySelector('input[type="email"]').value.trim();
-    const guests = document.querySelector('input[type="number"]').value;
+h3 {
+    color: #0f182e;
+    margin-top: 20px;
+}
 
-    if (!name || !email || !guests || !checkInInput.value || !checkOutInput.value) {
-        alert("Please fill all fields.");
-        return;
-    }
+div {
+    background-color: white;
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
-    if (new Date(checkOutInput.value) <= new Date(checkInInput.value)) {
-        alert("Check-out date must be after check-in date.");
-        return;
-    }
+img {
+    margin: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
 
-    alert("Booking Successful!\n" + totalDisplay.textContent);
-});
+img:hover {
+    transform: scale(1.05);
+}
 
-// IMAGE CAROUSEL
-const roomSections = document.querySelectorAll("div");
+ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-roomSections.forEach(section => {
-    const images = section.querySelectorAll("img");
+ul li {
+    background-color: #ecf0f1;
+    margin: 5px auto;
+    padding: 8px;
+    width: 60%;
+    border-radius: 20px;
+}
 
-    if (images.length > 1) {
-        let currentIndex = 0;
+p {
+    font-size: 16px;
+    color: #555;
+}
 
-        images.forEach((img, index) => {
-            img.style.display = index === 0 ? "inline-block" : "none";
-        });
+p:last-of-type {
+    font-weight: bold;
+    color: #27ae60;
+}
 
-        setInterval(() => {
-            images[currentIndex].style.display = "none";
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].style.display = "inline-block";
-        }, 2000);
-    }
-});
+input[type="date"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+form {
+    background-color: white;
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color:#0f182e;
+}
+
+p:last-child {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
