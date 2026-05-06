@@ -1,153 +1,24 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Grand Plaza Hotel - Room Booking</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #c9c7a3;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-
-h1 {
-    background-color: #0f182e;
-    color: white;
-    padding: 15px;
-    margin: 0;
-}
-
-h2 {
-    color: #0f182e;
-}
-
-h3 {
-    color: #0f182e;
-
-    margin-top: 20px;
-}
-
-
-div {
-    background-color: white;
-    width: 80%;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-
-img {
-    margin: 10px;
-    border-radius: 8px;
-    transition: transform 0.3s;
-}
-
-img:hover {
-    transform: scale(1.05);
-}
-
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    background-color: #ecf0f1;
-    margin: 5px auto;
-    padding: 8px;
-    width: 60%;
-    border-radius: 20px;
-}
-
-
-p {
-    font-size: 16px;
-    color: #555;
-}
-
-p:last-of-type {
-    font-weight: bold;
-    color: #27ae60;
-}
-
-input[type="date"] {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 200px;
-}
-
-
-form {
-    background-color: white;
-    width: 60%;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-input[type="text"],
-input[type="email"],
-input[type="number"],
-select {
-    width: 80%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-
-button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color:#0f182e;
-
-}
-
-
-p:last-child {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #777;
-}
-</style>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-
-<body center="align">
+<body>
 
     <h1>Grand Plaza Hotel</h1>
     <h2>Room Selection</h2>
-<hr>
+    <hr>
 
     <h3>ROOM 1</h3>
     <div>
         <h3>Deluxe Room</h3>
 
-        <!-- Image section -->
-	<img src="C:\Users\HP\OneDrive\Desktop\king.jpeg"width="300"height="200">
-       <img src="C:\Users\HP\OneDrive\Desktop\tv.jpeg"width="300"height="200">
-        <img src="C:\Users\HP\OneDrive\Desktop\ac.jpeg"width="300"height="200">
-	<img src="C:\Users\HP\OneDrive\Desktop\frige.jpeg"width="300"height="200">
-	
-	
-
-
+        <img src="images/king.jpeg" width="300" height="200">
+        <img src="images/tv.jpeg" width="300" height="200">
+        <img src="images/ac.jpeg" width="300" height="200">
+        <img src="images/frige.jpeg" width="300" height="200">
 
         <p>Amenities:</p>
         <ul>
@@ -159,16 +30,17 @@ p:last-child {
 
         <p>Price: ₹3000 per night</p>
     </div>
-<hr>
 
-    <h3> ROOM 2 </h3>
+    <hr>
+
+    <h3>ROOM 2</h3>
     <div>
         <h3>Executive Suite</h3>
 
-        <img src="C:\Users\HP\OneDrive\Desktop\blue.jpeg"width="300"height="200">
-        <img src="C:\Users\HP\OneDrive\Desktop\gray.jpeg"width="300"height="200">
-	<img src="C:\Users\HP\OneDrive\Desktop\bat.jpeg"width="300"height="200">
-	<img src="C:\Users\HP\OneDrive\Desktop\room.jpeg"width="300"height="200">
+        <img src="images/blue.jpeg" width="300" height="200">
+        <img src="images/gray.jpeg" width="300" height="200">
+        <img src="images/bat.jpeg" width="300" height="200">
+        <img src="images/room.jpeg" width="300" height="200">
 
         <p>Amenities:</p>
         <ul>
@@ -180,16 +52,17 @@ p:last-child {
 
         <p>Price: ₹5000 per night</p>
     </div>
-<hr>
+
+    <hr>
 
     <h3>ROOM 3</h3>
     <div>
         <h3>Presidential Suite</h3>
 
-        <img src="C:\Users\HP\OneDrive\Desktop\luc.jpeg"width="300"height="200">
-	<img src="C:\Users\HP\OneDrive\Desktop\pool.jpeg"width="300"height="200">
-        <img src="C:\Users\HP\OneDrive\Desktop\but.jpeg"width="300"height="200">
-	<img src="C:\Users\HP\OneDrive\Desktop\ocean.jpeg"width="300"height="200">
+        <img src="images/luc.jpeg" width="300" height="200">
+        <img src="images/pool.jpeg" width="300" height="200">
+        <img src="images/but.jpeg" width="300" height="200">
+        <img src="images/ocean.jpeg" width="300" height="200">
 
         <p>Amenities:</p>
         <ul>
@@ -201,9 +74,9 @@ p:last-child {
 
         <p>Price: ₹9000 per night</p>
     </div>
-<hr>
 
-    <h3> DATE SELECTION</h3>
+    <hr>
+
     <h3>Select Dates</h3>
 
     <label>Check-in:</label>
@@ -212,7 +85,6 @@ p:last-child {
     <label>Check-out:</label>
     <input type="date"><br><br>
 
-    <h3> BOOKING FORM</h3>
     <h3>Booking Form</h3>
 
     <form>
@@ -236,91 +108,7 @@ p:last-child {
     </form>
 
     <p>© 2026 Grand Plaza Hotel</p>
-<script>
-// -------------------- ROOM PRICES --------------------
-const roomPrices = {
-    "Deluxe Room": 3000,
-    "Executive Suite": 5000,
-    "Presidential Suite": 9000
-};
 
-// -------------------- ELEMENT SELECTORS --------------------
-const dateInputs = document.querySelectorAll('input[type="date"]');
-const checkInInput = dateInputs[0];
-const checkOutInput = dateInputs[1];
-const roomSelect = document.querySelector("select");
-const form = document.querySelector("form");
-
-// -------------------- TOTAL PRICE DISPLAY --------------------
-const totalDisplay = document.createElement("h3");
-totalDisplay.style.color = "#e74c3c";
-totalDisplay.textContent = "";
-form.parentNode.insertBefore(totalDisplay, form);
-
-// -------------------- PRICE CALCULATION --------------------
-function calculateTotal() {
-    const checkIn = new Date(checkInInput.value);
-    const checkOut = new Date(checkOutInput.value);
-    const roomType = roomSelect.value;
-
-    if (checkInInput.value && checkOutInput.value && checkOut > checkIn) {
-        const nights = (checkOut - checkIn) / (1000 * 60 * 60 * 24);
-        const total = nights * roomPrices[roomType];
-
-        totalDisplay.textContent = `Total Price: ₹${total} (${nights} nights)`;
-    } else {
-        totalDisplay.textContent = "";
-    }
-}
-
-// Event listeners
-checkInInput.addEventListener("change", calculateTotal);
-checkOutInput.addEventListener("change", calculateTotal);
-roomSelect.addEventListener("change", calculateTotal);
-
-// -------------------- FORM VALIDATION --------------------
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const name = document.querySelector('input[type="text"]').value.trim();
-    const email = document.querySelector('input[type="email"]').value.trim();
-    const guests = document.querySelector('input[type="number"]').value;
-
-    if (!name || !email || !guests || !checkInInput.value || !checkOutInput.value) {
-        alert("Please fill all fields.");
-        return;
-    }
-
-    if (new Date(checkOutInput.value) <= new Date(checkInInput.value)) {
-        alert("Check-out date must be after check-in date.");
-        return;
-    }
-
-    alert("Booking Successful!\n" + totalDisplay.textContent);
-});
-
-// -------------------- IMAGE CAROUSEL --------------------
-const roomSections = document.querySelectorAll("div");
-
-roomSections.forEach(section => {
-    const images = section.querySelectorAll("img");
-
-    if (images.length > 1) {
-        let currentIndex = 0;
-
-        // Hide all except first
-        images.forEach((img, index) => {
-            img.style.display = index === 0 ? "inline-block" : "none";
-        });
-
-        setInterval(() => {
-            images[currentIndex].style.display = "none";
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].style.display = "inline-block";
-        }, 2000);
-    }
-});
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
