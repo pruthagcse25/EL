@@ -1,53 +1,60 @@
-// -------------------- ROOM PRICES --------------------
 const roomPrices = {
     "Deluxe Room": 3000,
     "Executive Suite": 5000,
     "Presidential Suite": 9000
 };
 
-// -------------------- ELEMENT SELECTORS --------------------
-const dateInputs = document.querySelectorAll('input[type="date"]');
-const checkInInput = dateInputs[0];
-const checkOutInput = dateInputs[1];
-const roomSelect = document.querySelector("select");
-const form = document.querySelector("form");
+const checkInInput = document.getElementById("checkin");
+const checkOutInput = document.getElementById("checkout");
+const roomSelect = document.getElementById("room");
+const form = document.getElementById("bookingForm");
 
-// -------------------- TOTAL PRICE DISPLAY --------------------
 const totalDisplay = document.createElement("h3");
 totalDisplay.style.color = "#e74c3c";
-totalDisplay.textContent = "";
+totalDisplay.style.marginBottom = "15px";
+
 form.parentNode.insertBefore(totalDisplay, form);
 
-// -------------------- PRICE CALCULATION --------------------
 function calculateTotal() {
     const checkIn = new Date(checkInInput.value);
     const checkOut = new Date(checkOutInput.value);
     const roomType = roomSelect.value;
 
-    if (checkInInput.value && checkOutInput.value && checkOut > checkIn) {
-        const nights = (checkOut - checkIn) / (1000 * 60 * 60 * 24);
+    if (
+        checkInInput.value &&
+        checkOutInput.value &&
+        checkOut > checkIn
+    ) {
+        const nights =
+            (checkOut - checkIn) / (1000 * 60 * 60 * 24);
+
         const total = nights * roomPrices[roomType];
 
-        totalDisplay.textContent = `Total Price: ₹${total} (${nights} nights)`;
+        totalDisplay.textContent =
+            `Total Price: ₹${total} (${nights} night${nights > 1 ? "s" : ""})`;
     } else {
         totalDisplay.textContent = "";
     }
 }
 
-// Event listeners
 checkInInput.addEventListener("change", calculateTotal);
 checkOutInput.addEventListener("change", calculateTotal);
 roomSelect.addEventListener("change", calculateTotal);
 
-// -------------------- FORM VALIDATION --------------------
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const name = document.querySelector('input[type="text"]').value.trim();
-    const email = document.querySelector('input[type="email"]').value.trim();
-    const guests = document.querySelector('input[type="number"]').value;
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const guests = document.getElementById("guests").value;
 
-    if (!name || !email || !guests || !checkInInput.value || !checkOutInput.value) {
+    if (
+        !name ||
+        !email ||
+        !guests ||
+        !checkInInput.value ||
+        !checkOutInput.value
+    ) {
         alert("Please fill all fields.");
         return;
     }
@@ -57,11 +64,18 @@ form.addEventListener("submit", function (e) {
         return;
     }
 
-    alert("Booking Successful!\n" + totalDisplay.textContent);
+    alert(
+        `Booking Successful!\n\n` +
+        `Guest: ${name}\n` +
+        `Room: ${roomSelect.value}\n` +
+        `${totalDisplay.textContent}`
+    );
+
+    form.reset();
+    totalDisplay.textContent = "";
 });
 
-// -------------------- IMAGE CAROUSEL --------------------
-const roomSections = document.querySelectorAll("div");
+const roomSections = document.querySelectorAll(".room");
 
 roomSections.forEach(section => {
     const images = section.querySelectorAll("img");
@@ -70,13 +84,18 @@ roomSections.forEach(section => {
         let currentIndex = 0;
 
         images.forEach((img, index) => {
-            img.style.display = index === 0 ? "inline-block" : "none";
+            img.style.display =
+                index === 0 ? "inline-block" : "none";
         });
 
         setInterval(() => {
             images[currentIndex].style.display = "none";
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].style.display = "inline-block";
+
+            currentIndex =
+                (currentIndex + 1) % images.length;
+
+            images[currentIndex].style.display =
+                "inline-block";
         }, 2000);
     }
 });
